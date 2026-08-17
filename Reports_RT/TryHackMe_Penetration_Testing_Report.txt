@@ -1,0 +1,258 @@
+TRYHACKME PENETRATION TESTING REPORT
+Authorized Training Environment
+
+Title: Security Assessment and Exploitation Report
+Prepared by: [Your Name]
+Email: [Your Email]
+Client/Platform: TryHackMe
+Assessment Type: Authorized Lab / CTF Security Assessment
+Version: 1.0
+Date: 17 August 2026
+
+
+VERSION CONTROL
+----------------
+Version 1.0
+Date: 17 August 2026
+Author: [Your Name]
+Description: Initial penetration-testing report documenting the authorized exploitation exercise.
+
+
+TABLE OF CONTENTS
+-----------------
+1. Executive Summary
+2. Technical Summary
+3. Scope and Methodology
+4. Vulnerability Summary
+5. Detailed Exploitation
+6. Impact Assessment
+7. Recommendations
+8. Conclusion
+
+
+1. EXECUTIVE SUMMARY
+--------------------
+This report documents an authorized security assessment performed against a TryHackMe training environment.
+
+The objective of the engagement was to identify security weaknesses, demonstrate their practical impact through controlled exploitation, and obtain the level of access permitted by the exercise. The assessment was performed solely within the designated TryHackMe environment.
+
+The exercise demonstrated how weaknesses in system configuration, exposed services, authentication, credential handling, or privilege boundaries can potentially be chained together to obtain increased access.
+
+From a management perspective, the key lesson is that a single security weakness may have a greater impact when combined with other weaknesses. Effective remediation therefore requires addressing both the individual vulnerability and the underlying security controls that allowed exploitation.
+
+No production systems were intentionally targeted as part of this report.
+
+
+2. TECHNICAL SUMMARY
+--------------------
+The assessment followed a standard penetration-testing workflow:
+
+1. Reconnaissance and enumeration.
+2. Identification of exposed services and potential attack surfaces.
+3. Vulnerability analysis.
+4. Controlled exploitation within the TryHackMe environment.
+5. Credential and access validation where applicable.
+6. Privilege-escalation analysis where applicable.
+7. Collection of proof-of-exploitation evidence.
+8. Development of remediation recommendations.
+
+The assessment was performed against an intentionally vulnerable training target. The objective was to demonstrate the security consequences of exploitable weaknesses rather than to cause operational disruption.
+
+
+3. SCOPE AND METHODOLOGY
+------------------------
+Scope:
+- TryHackMe-authorized target environment.
+- Services and applications exposed by the assigned room.
+- User and privilege boundaries relevant to the exercise.
+
+Out of Scope:
+- Unrelated internet hosts.
+- Third-party systems.
+- Production infrastructure.
+- Denial-of-service activity.
+- Destructive actions.
+
+Methodology:
+- Network/service enumeration.
+- Application and configuration analysis.
+- Vulnerability identification.
+- Manual exploitation.
+- Privilege validation.
+- Evidence collection.
+- Risk assessment and remediation planning.
+
+
+4. VULNERABILITY SUMMARY
+------------------------
+Because the specific room findings and command output were not supplied, this report does not invent vulnerability names, CVEs, affected ports, or exploitation results.
+
+The findings below should therefore be populated from the actual TryHackMe exercise before being submitted as an evidence-based assessment.
+
+Finding 01
+Title: [Vulnerability Title]
+Severity: [Critical/High/Medium/Low]
+Affected Component: [Component]
+Impact: [Impact]
+Status: Demonstrated in authorized lab
+
+Finding 02
+Title: [Vulnerability Title]
+Severity: [Critical/High/Medium/Low]
+Affected Component: [Component]
+Impact: [Impact]
+Status: Demonstrated in authorized lab
+
+Finding 03
+Title: [Vulnerability Title]
+Severity: [Critical/High/Medium/Low]
+Affected Component: [Component]
+Impact: [Impact]
+Status: Demonstrated in authorized lab
+
+
+5. DETAILED EXPLOITATION
+------------------------
+
+5.1 Initial Enumeration
+
+Objective:
+Identify the attack surface exposed by the authorized target.
+
+Evidence:
+[Insert your enumeration results here.]
+
+Example evidence format:
+- Target IP: [IP]
+- Open TCP ports: [Ports]
+- Services: [Services]
+- Versions: [Versions]
+- Web applications: [Applications]
+
+Assessment:
+Enumeration is an essential first stage because exposed services determine which attack paths should be investigated. Version information, authentication interfaces, web applications, and unusual services can all provide useful indicators of potential vulnerabilities.
+
+
+5.2 Vulnerability 01
+
+Title: [Insert Finding Title]
+Severity: [Severity]
+
+Description:
+[Describe the vulnerability and why it exists.]
+
+Affected Component:
+[Service/application/file/configuration]
+
+Exploitation Steps:
+1. Enumerate the affected component.
+2. Identify the vulnerable behavior.
+3. Perform the controlled exploitation against the TryHackMe target.
+4. Validate the resulting access or impact.
+5. Record terminal output or screenshots as evidence.
+
+Proof of Exploitation:
+[Insert command/output/screenshot description.]
+
+Impact:
+Successful exploitation could result in [unauthorized access / information disclosure / privilege escalation / remote code execution], depending on the vulnerability demonstrated.
+
+Recommendation:
+Remediate the underlying vulnerability, update affected software where applicable, remove unnecessary exposure, enforce least privilege, and implement appropriate authentication and access controls.
+
+
+5.3 Credential Exposure / Authentication Finding
+
+Title: [Insert Credential Finding]
+Severity: [Severity]
+
+Description:
+During the authorized exercise, credentials may have been encountered as part of the attack path. Credentials should not be stored or transmitted insecurely.
+
+Evidence:
+[Insert the exact lab evidence here.]
+
+Impact:
+Exposed credentials can allow an attacker to move from an initial foothold to additional accounts or services. If the credentials provide administrative privileges, the impact can escalate to full system compromise.
+
+Recommendation:
+Rotate exposed credentials, avoid plaintext credential storage, use strong password hashing for locally stored authentication data, restrict file permissions, apply least privilege, and use a dedicated secrets-management mechanism where appropriate.
+
+
+5.4 Privilege Escalation
+
+Title: [Insert Privilege Escalation Finding]
+Severity: Critical/High
+
+Description:
+The assessment demonstrated a path from lower-privileged access toward elevated privileges within the authorized training environment.
+
+Exploitation Steps:
+1. Obtain the initial authorized foothold.
+2. Enumerate local users, groups, permissions, processes, scheduled tasks, services, binaries, and configuration files.
+3. Identify the privilege boundary weakness.
+4. Perform the controlled privilege-escalation technique.
+5. Verify the resulting privilege level.
+
+Proof:
+[Insert terminal output or screenshot demonstrating the elevated privilege.]
+
+Impact:
+Successful privilege escalation can allow an attacker with limited access to obtain administrative control of the system. Administrative access can expose sensitive information and allow modification of system configuration.
+
+Recommendation:
+Remove unnecessary administrative permissions, correct insecure file and directory permissions, review privileged binaries and scheduled tasks, restrict service accounts, patch vulnerable software, and regularly audit privilege boundaries.
+
+
+6. IMPACT ASSESSMENT
+--------------------
+The overall security impact depends on the specific vulnerabilities demonstrated during the room.
+
+Potential impacts include:
+
+- Unauthorized access to restricted functionality.
+- Disclosure of credentials or sensitive information.
+- Lateral movement between services.
+- Privilege escalation.
+- Administrative or root-level system compromise.
+- Modification of system configuration.
+- Persistence by an attacker.
+
+The most important remediation priority should be the vulnerability that enables the greatest increase in attacker capability, particularly weaknesses that allow unrestricted administrative access.
+
+
+7. RECOMMENDATIONS
+------------------
+1. Apply security patches and upgrade vulnerable software.
+2. Remove unnecessary exposed services.
+3. Enforce least-privilege permissions.
+4. Never store passwords in plaintext.
+5. Rotate any credentials exposed during the assessment.
+6. Use strong authentication and secure credential-storage mechanisms.
+7. Review sudo and other administrative permissions.
+8. Audit scheduled tasks, services, SUID/SGID binaries, and writable privileged resources.
+9. Restrict sensitive files using appropriate filesystem permissions.
+10. Implement centralized logging and monitoring for authentication and privilege changes.
+11. Regularly perform vulnerability assessments and penetration tests.
+12. Validate all remediation changes with a follow-up security assessment.
+
+
+8. CONCLUSION
+-------------
+The TryHackMe exercise provided a controlled demonstration of how security weaknesses can be identified, exploited, and chained into greater levels of access.
+
+The assessment should be viewed as a practical security validation exercise. The most valuable outcome is not simply obtaining the final objective, but understanding the weaknesses that made that objective possible and applying appropriate controls to prevent the same attack path in a real environment.
+
+All exploitation described in this report is intended to refer only to the authorized TryHackMe training environment.
+
+
+APPENDIX A — EVIDENCE
+---------------------
+Insert screenshots, terminal output, commands, hashes/flags, and other proof collected during the exercise here.
+
+APPENDIX B — LAB CREDENTIAL
+----------------------------
+A credential was supplied for the authorized TryHackMe environment during preparation of this report. For security reasons, credentials should generally be redacted from reports intended for distribution and should be rotated if they are reused outside the lab.
+
+
+END OF REPORT
